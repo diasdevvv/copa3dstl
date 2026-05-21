@@ -738,7 +738,8 @@ h3 {
 .benefit-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 4px;
     background: linear-gradient(90deg, #10b981, #facc15);
@@ -2127,19 +2128,52 @@ h3 {
     }
 }
 
+.cases-hero-floating {
+    position: absolute;
+    width: 45%;
+    height: auto;
+    z-index: 9;
+    pointer-events: none;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+    top: -15%;
+    right: 15%;
+    transform: rotate(5deg);
+    animation: floatCases 8s ease-in-out infinite;
+}
+
+@keyframes floatCases {
+    0% {
+        transform: translateY(0) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(15deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(5deg);
+    }
+}
+
 @media (max-width: 768px) {
     .floating-keychain {
         width: 60%;
     }
 
     .keychain-left {
-        left: -10%;
-        top: -0%;
+        left: 25%;
+        top: 50%;
     }
 
     .keychain-right {
-        right: 0%;
+        right: -15%;
         bottom: -15%;
+    }
+
+    .cases-hero-floating {
+        width: 50%;
+        top: 60%;
+        right: 50%;
     }
 }
 
@@ -2154,9 +2188,17 @@ h3 {
 }
 
 @keyframes floatGentle {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 /* Apple Style Ambient Blur Background */
@@ -2206,8 +2248,19 @@ h3 {
 }
 
 @keyframes blobFloat {
-    0% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(5vw, -5vh) scale(1.1); }
-    66% { transform: translate(-3vw, 3vh) scale(0.9); }
-    100% { transform: translate(0, 0) scale(1.05); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(5vw, -5vh) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-3vw, 3vh) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1.05);
+    }
 }
